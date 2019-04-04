@@ -1,0 +1,17 @@
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: check_docker
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  commands:
+  - docker ps
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
