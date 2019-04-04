@@ -9,9 +9,9 @@ steps:
     path: /var/run/docker.sock
   environment:
     DOCKER_NAME:
-      from_secret:dockerhub_name
+      from_secret: dockerhub_name
     DOCKER_PASS:
-      from_secret:dockerhub_pass
+      from_secret: dockerhub_pass
   commands:
   - docker login -u $DOCKER_NAME -p $DOCKER_PASS
   - docker ps
