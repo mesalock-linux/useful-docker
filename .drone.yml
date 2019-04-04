@@ -15,7 +15,7 @@ steps:
     DOCKER_SUFFIX: centos.6.nightly
   commands:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
-  - docker build --pull -t baiduxlab/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX
+  - docker build --pull -t baiduxlab/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
 
 volumes:
 - name: docker_sock
