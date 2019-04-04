@@ -13,7 +13,7 @@ steps:
     DOCKER_PASS:
       from_secret: dockerhub_pass
   commands:
-  - docker login -u $DOCKER_NAME -p \'$DOCKER_PASS\'
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker ps
 
 volumes:
