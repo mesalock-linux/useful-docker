@@ -2,7 +2,7 @@ kind: pipeline
 name: useful_docker
 
 steps:
-- name: check_docker
+- name: build-centos6-nightly
   image: docker:latest
   volumes:
   - name: docker_sock
@@ -15,7 +15,197 @@ steps:
     DOCKER_SUFFIX: centos.6.nightly
   commands:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
-  - docker build --pull -t baiduxlab/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-centos6-stable
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: centos.6.stable
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-centos7-nightly
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: centos.7.nightly
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-centos7-stable
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: centos.7.stable
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-ubuntu1604-nightly
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: ubuntu.1604.nightly
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-ubuntu1604-stable
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: ubuntu.1604.stable
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-ubuntu1804-nightly
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: ubuntu.1804.nightly
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+
+volumes:
+- name: docker_sock
+  host:
+    path: /var/run/docker.sock
+
+---
+
+kind: pipeline
+name: useful_docker
+
+steps:
+- name: build-ubuntu1804-stable
+  image: docker:latest
+  volumes:
+  - name: docker_sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKER_NAME:
+      from_secret: dockerhub_name
+    DOCKER_PASS:
+      from_secret: dockerhub_pass
+    DOCKER_SUFFIX: ubuntu.1804.stable
+  commands:
+  - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
+  - docker build --pull -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
+  - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
 
 volumes:
 - name: docker_sock
