@@ -1,5 +1,5 @@
 kind: pipeline
-name: useful_docker
+name: build-centos6-nightly
 
 steps:
 - name: build-centos6-nightly
@@ -26,7 +26,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-centos6-stable
 
 steps:
 - name: build-centos6-stable
@@ -53,7 +53,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-centos7-nightly
 
 steps:
 - name: build-centos7-nightly
@@ -80,7 +80,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-centos7-stable
 
 steps:
 - name: build-centos7-stable
@@ -107,7 +107,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-ubuntu1604-nightly
 
 steps:
 - name: build-ubuntu1604-nightly
@@ -134,7 +134,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-ubuntu1604-stable
 
 steps:
 - name: build-ubuntu1604-stable
@@ -161,7 +161,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-ubuntu1804-nightly
 
 steps:
 - name: build-ubuntu1804-nightly
@@ -188,7 +188,7 @@ volumes:
 ---
 
 kind: pipeline
-name: useful_docker
+name: build-ubuntu1804-stable
 
 steps:
 - name: build-ubuntu1804-stable
