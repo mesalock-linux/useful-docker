@@ -17,6 +17,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -44,6 +45,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -71,6 +73,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -98,6 +101,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -125,6 +129,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -152,6 +157,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -179,6 +185,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -206,6 +213,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -233,6 +241,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
@@ -260,6 +269,7 @@ steps:
   - echo $DOCKER_PASS | docker login -u $DOCKER_NAME --password-stdin
   - docker build --pull --no-cache -t $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX -f Dockerfile.$DOCKER_SUFFIX .
   - docker push $DOCKER_NAME/useful-docker:$DOCKER_SUFFIX
+  - docker system prune -f
 
 volumes:
 - name: docker_sock
